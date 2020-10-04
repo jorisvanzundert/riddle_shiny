@@ -1,11 +1,12 @@
 library( shiny )
 library( litRiddle )
 library( RColorBrewer )
+library( here )
 library( ggplot2 )
 library( waffle )
 
 options( shiny.port = 4800 )
-
+addResourcePath( 'resources', file.path( here(), 'resources' ) )
 data( respondents )
 
 waffle_palette <- rev( brewer.pal( 5, "Pastel2" ) )
@@ -13,7 +14,8 @@ bar_palette <- brewer.pal( 5, "Greens" )
 
 ui <- bootstrapPage(
   titlePanel( "title panel" ),
-  sidebarLayout( position = "left",
+  theme='resources/bootstrap_extensions.css',
+  sidebarLayout( position="left",
     sidebarPanel( "sidebar panel",
       sliderInput(
         inputId='age_range',
