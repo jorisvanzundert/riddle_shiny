@@ -11,7 +11,7 @@ data( respondents )
 waffle_palette <- rev( brewer.pal( 5, "Pastel2" ) )
 bar_palette <- brewer.pal( 5, "Greens" )
 
-ui <- fluidPage(
+ui <- bootstrapPage(
   titlePanel( "title panel" ),
   sidebarLayout( position = "left",
     sidebarPanel( "sidebar panel",
